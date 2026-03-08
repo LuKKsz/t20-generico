@@ -1,0 +1,3 @@
+Para compartilhamento do modulo entre amigos...
+
+manifest: https://raw.githubusercontent.com/LuKKsz/t20-generico/refs/heads/main/module.json

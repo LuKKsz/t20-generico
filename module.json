@@ -169,5 +169,8 @@
     }
   ],
   "description": "",
-  "flags": {}
+  "flags": {},
+  "url": "https://github.com/LuKKsz/t20-generico",
+  "manifest": "https://raw.githubusercontent.com/LuKKsz/t20-generico/refs/heads/main/module.json",
+  "download": "https://github.com/LuKKsz/t20-generico/archive/refs/heads/main.zip"
 }
