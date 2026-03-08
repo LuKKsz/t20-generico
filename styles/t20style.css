@@ -1,0 +1,1124 @@
+﻿/* Estilo Estilo D&D 5e Moderno para Tormenta20 (v3.2 - Títulos Equilibrados) */
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300;400;600;700&display=swap');
+
+:root {
+    --dnd5e-font-header: "Modesto Condensed", "Palatino Linotype", serif;
+    --dnd5e-font-body: "Roboto", sans-serif;
+    --dnd5e-color-gold: #9f9275;
+    --dnd5e-color-crimson: #44191A;
+    --dnd5e-color-parchment: #f1ebe8;
+    --dnd5e-color-groove: #eeede0;
+    --dnd5e-color-text-dark: #191813;
+    --dnd5e-color-text-light: #fff;
+
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.5);
+    --shadow-soft: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.5);
+    --shadow-soft: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Scrollbar Customization (Remove barra cinza) --- */
+.tormenta20.sheet ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.tormenta20.sheet ::-webkit-scrollbar-track {
+    background: transparent;
+    /* Remove o fundo cinza/barra */
+    box-shadow: none;
+    border: none;
+}
+
+.tormenta20.sheet ::-webkit-scrollbar-thumb {
+    background: var(--dnd5e-color-crimson);
+    /* Thumb sutil */
+    border-radius: 3px;
+    opacity: 0.8;
+}
+
+/* --- Base Layout (Actor e Item) --- */
+.tormenta20.sheet.actor,
+.tormenta20.sheet.item {
+    background: url("systems/dnd5e/ui/parchment.jpg") repeat, #f1ebe8;
+    background-color: var(--dnd5e-color-parchment);
+    color: var(--dnd5e-color-text-dark);
+    font-family: var(--dnd5e-font-body);
+}
+
+.tormenta20.sheet .window-content {
+    background: transparent;
+    padding: 0;
+}
+
+/* Garante texto escuro em todos os elementos de texto */
+
+
+/* --- Global Layout Spacing (Abas) --- */
+.tormenta20.sheet .sheet-body .tab {
+    padding: 0 8px;
+    /* Espaço das bordas */
+}
+
+/* --- Header Section --- */
+.tormenta20.sheet .sheet-header {
+    background: transparent;
+    border-bottom: none !important;
+    padding: 2px 5px;
+    /* Compacto */
+    margin-bottom: 2px;
+    align-items: center;
+}
+
+/* Character Name / Item Name */
+.tormenta20.sheet .sheet-header h1.charname,
+.tormenta20.sheet.item .sheet-header h1 {
+    flex: 1;
+    border: none;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Ajuste de Fonte (MENOR) --- */
+.tormenta20.sheet .sheet-header h1.charname input,
+.tormenta20.sheet.item .sheet-header h1 input {
+    font-family: var(--dnd5e-font-header);
+    font-weight: 700;
+    font-size: 1.8em;
+    color: var(--dnd5e-color-crimson);
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+    height: auto;
+    padding: 0;
+}
+
+.tormenta20.sheet .sheet-header input:hover,
+.tormenta20.sheet .sheet-header input:focus {
+    border-bottom-color: var(--dnd5e-color-gold);
+    box-shadow: none;
+}
+
+/* Profile Image / Item Image */
+.tormenta20.sheet .sheet-header img.profile,
+.tormenta20.sheet.item .sheet-header img {
+    flex: 0 0 64px;
+    height: 64px;
+    width: 64px;
+    object-fit: cover;
+    border: 2px solid var(--dnd5e-color-gold);
+    border-radius: 4px;
+    box-shadow: var(--shadow-soft);
+    background: #fff;
+    margin-right: 10px;
+}
+
+/* --- Atributos de Cabeçalho (Visual Clean/Minimalista) --- */
+.tormenta20.sheet .attributes {
+    border: none;
+    background: transparent;
+    gap: 10px;
+    margin: 5px 0;
+}
+
+.tormenta20.sheet .attribute {
+    border: none !important;
+    /* Remove bordas verticais de planilha */
+    background: transparent !important;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0 10px;
+    position: relative;
+}
+
+/* Separador leve entre colunas */
+.tormenta20.sheet .attribute:not(:last-child) {
+    border-right: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Títulos */
+.tormenta20.sheet .attribute h4.attribute-name {
+    background: transparent;
+    border: none;
+    border-bottom: none !important;
+    /* Linha de destaque */
+    color: var(--dnd5e-color-crimson) !important;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+    padding-bottom: 2px;
+    width: 100%;
+    text-align: center;
+    box-shadow: none !important;
+}
+
+/* Valores (Inputs) */
+.tormenta20.sheet .attribute input {
+    border: none !important;
+    background: transparent !important;
+    font-size: 1.1em !important;
+    /* Padronizado com defesa */
+    font-family: var(--dnd5e-font-header);
+    height: 30px;
+    text-align: center;
+    color: var(--dnd5e-color-text-dark) !important;
+}
+
+.tormenta20.sheet .attribute input:focus {
+    box-shadow: none !important;
+    border-bottom: 1px solid var(--dnd5e-color-crimson) !important;
+}
+
+/* Separador / */
+.tormenta20.sheet .attribute .sep {
+    font-size: 1.1em;
+    color: var(--dnd5e-color-gold);
+    margin: 0 1px;
+}
+
+/* Defesa Limpa */
+.tormenta20.sheet .attribute.defense {
+    margin-top: 0;
+    width: auto;
+}
+
+.tormenta20.sheet .attribute.defense::before {
+    content: none !important;
+    /* Remove escudo anterior */
+}
+
+.tormenta20.sheet .attribute.defense .attribute-value {
+    font-size: 1.1em;
+    /* Reseta tamanho gigante */
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    /* Igual inputs */
+}
+
+.tormenta20.sheet .attribute.defense .attribute-footer {
+    display: block;
+    /* Volta a mostrar footer se quiser, ou esconde */
+    position: static;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    width: auto;
+}
+
+.tormenta20.sheet .attribute.defense:hover .attribute-footer {
+    animation: none;
+}
+
+/* --- Refinamento Ficha de Item (Visual Colorido) --- */
+.tormenta20.sheet.item .sheet-body {
+    padding: 5px;
+    /* Compacto */
+}
+
+.tormenta20.sheet.item .form-group {
+    margin-bottom: 4px;
+    /* Ultra compacto */
+    align-items: center;
+    border-bottom: none !important;
+    padding-bottom: 2px;
+}
+
+/* Títulos das seções nas fichas de item */
+.tormenta20.sheet.item h2,
+.tormenta20.sheet.item h3,
+.tormenta20.sheet.item h4 {
+    font-family: var(--dnd5e-font-header);
+    color: var(--dnd5e-color-crimson) !important;
+    border-bottom: none !important;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-bottom: 2px;
+}
+
+/* Labels coloridos para quebrar monocromia */
+.tormenta20.sheet.item label {
+    font-weight: bold;
+    font-family: var(--dnd5e-font-header);
+    font-size: 1em;
+    /* Compacto */
+    color: var(--dnd5e-color-crimson) !important;
+    margin-right: 5px;
+}
+
+/* Inputs da ficha de item */
+.tormenta20.sheet.item input[type="text"],
+.tormenta20.sheet.item input[type="number"] {
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid var(--dnd5e-color-faint);
+    padding: 1px 4px;
+    /* Compacto */
+    border-radius: 2px;
+    color: var(--dnd5e-color-text-dark) !important;
+    height: 24px;
+}
+
+.tormenta20.sheet.item input[type="text"]:focus,
+.tormenta20.sheet.item input[type="number"]:focus {
+    border-color: var(--dnd5e-color-crimson);
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* Checkboxes */
+.tormenta20.sheet.item input[type="checkbox"] {
+    accent-color: var(--dnd5e-color-crimson);
+    transform: scale(1.0);
+}
+
+
+/* --- Tabs Navigation (VERSÃO CLEAN - Ultra Compacta) --- */
+/* --- Tabs Navigation (VERSÃO CLEAN - Ultra Compacta) --- */
+.tormenta20.sheet .sheet-tabs {
+    border-top: none !important;
+    /* Garante remoção de linha acima */
+    border-bottom: none !important;
+    box-shadow: none !important;
+    margin: 2px 5px 5px;
+    gap: 0;
+}
+
+.tormenta20.sheet nav.sheet-tabs {
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+.tormenta20.sheet .sheet-tabs .item {
+    font-family: var(--dnd5e-font-header);
+    font-size: 1.0em;
+    font-weight: bold;
+    color: var(--dnd5e-color-text-dark);
+    background: transparent !important;
+    border: none !important;
+    margin-right: 0;
+    padding: 3px 8px;
+    text-shadow: none;
+    opacity: 0.7;
+    transition: all 0.2s;
+    border-radius: 3px;
+    /* Centralização Vertical */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tormenta20.sheet .sheet-tabs .item:hover {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.05) !important;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+.tormenta20.sheet .sheet-tabs .item i {
+    margin-right: 6px;
+    /* Espaço entre ícone e texto */
+}
+
+.tormenta20.sheet .sheet-tabs .item.active {
+    background: rgba(255, 255, 255, 0.6) !important;
+    /* Fundo mais forte */
+    border: none !important;
+    border-bottom: 2px solid var(--dnd5e-color-crimson) !important;
+    /* Foco visual */
+    color: var(--dnd5e-color-crimson);
+    opacity: 1;
+    box-shadow: none;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    position: relative;
+    border-radius: 3px 3px 0 0;
+    /* Quadrado em baixo */
+}
+
+/* --- Attributes / Stats --- */
+.tormenta20.sheet .attributes-mid {
+    gap: 5px;
+    /* Compacto */
+    margin-bottom: 5px;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.tormenta20.sheet ul.abilities,
+.tormenta20.sheet .abilities {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-image: none !important;
+    outline: none !important;
+    padding: 0;
+}
+
+.tormenta20.sheet .ability {
+    background: rgba(255, 255, 255, 0.3) !important;
+    /* Box individual */
+    border: 1px solid rgba(0, 0, 0, 0.15) !important;
+    /* Agora com borda */
+    border-radius: 4px;
+    padding: 4px;
+    text-align: center;
+    box-shadow: none;
+    margin: 0 2px;
+}
+
+.tormenta20.sheet .ability .ability-name {
+    font-family: var(--dnd5e-font-header);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    color: var(--dnd5e-color-crimson) !important;
+    /* Nome em Vermelho */
+    margin-bottom: 1px;
+}
+
+.tormenta20.sheet .ability .ability-mod {
+    font-family: var(--dnd5e-font-header);
+    font-size: 1.4em;
+    font-weight: bold;
+    color: var(--dnd5e-color-crimson) !important;
+    /* Modificador em Vermelho */
+    line-height: 1;
+}
+
+
+
+/* --- Lists (Skills, Inventory, etc) --- */
+.tormenta20.sheet ul.item-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tormenta20.sheet li.item {
+    background: rgba(255, 255, 255, 0.4);
+    border-bottom: 1px solid #ccc;
+    padding: 3px 5px;
+    /* Ultra Compacto */
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 3px;
+    margin-bottom: 1px;
+    box-shadow: none;
+    min-height: 28px;
+    /* Garante altura mínima menor */
+    transition: background 0.2s;
+}
+
+.tormenta20.sheet li.item:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.tormenta20.sheet li.item .item-image {
+    flex: 0 0 24px;
+    /* Icones ainda menores */
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    border-radius: 3px;
+    border: 1px solid var(--dnd5e-color-gold);
+}
+
+/* Header das tabelas de itens (vermelho) */
+.tormenta20.sheet li.item-header {
+    background: var(--dnd5e-color-crimson);
+    color: var(--dnd5e-color-text-light);
+    font-family: var(--dnd5e-font-header);
+    border: 1px solid var(--dnd5e-color-crimson);
+    border-radius: 2px;
+    /* Mais quadrado */
+    padding: 3px 6px;
+    /* Ultra Compacto */
+    font-weight: bold;
+    margin-bottom: 2px;
+    box-shadow: none;
+    flex-wrap: nowrap;
+    line-height: 1.1;
+}
+
+/* Remove hover dos headers */
+.tormenta20.sheet li.item-header:hover {
+    background: var(--dnd5e-color-crimson) !important;
+    color: var(--dnd5e-color-text-light) !important;
+}
+
+/* Força TODOS os links a e ícones i dentro dos headers a serem brancos */
+/* TÍTULOS EQUILIBRADOS */
+.tormenta20.sheet li.item-header a,
+.tormenta20.sheet li.item-header i,
+.tormenta20.sheet li.item-header span,
+.tormenta20.sheet li.item-header div {
+    font-size: 0.9em;
+    /* Reduzido de 0.95em para 0.9em */
+    color: var(--dnd5e-color-text-light) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tormenta20.sheet li.item-header a:hover,
+.tormenta20.sheet li.item-header i:hover {
+    color: var(--dnd5e-color-gold) !important;
+    text-shadow: 0 0 5px white;
+}
+
+/* Título da seção (padrão esquerda para itens) */
+.tormenta20.sheet li.item-header .item-name {
+    justify-content: flex-start;
+    /* Volta para esquerda */
+    display: flex;
+    text-align: left;
+    padding-left: 2px;
+}
+
+/* Título de PERÍCIAS (Centralizado e Maior Exclusivamente) */
+/* Título de PERÍCIAS (Centralizado e Maior Exclusivamente) */
+.tormenta20.sheet .skills-list .item-header .item-name {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    font-size: 1.4em !important;
+    /* Força tamanho maior */
+    min-height: 20px;
+    padding-top: 1px;
+    gap: 10px;
+    /* Espaço entre texto e engrenagem */
+    width: 100%;
+}
+
+.tormenta20.sheet .skills-list .item-header .item-name span {
+    line-height: normal;
+    display: block;
+}
+
+/* --- ABA PODERES --- */
+/* Oculta seções vazias da aba poderes (que só tem o header) */
+/* Usa pseudo-classe :has() (suporte moderno em browsers/Foundry V10+) */
+.tormenta20.sheet .tab.powers .item-list:not(:has(.item:not(.item-header))) {
+    display: none;
+}
+
+/* Garante que o botão de criar (+) fique no final da linha (direita) */
+.tormenta20.sheet li.item-header .item-controls {
+    margin-left: auto;
+    /* Empurra para direita */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* Força icone visivel */
+.tormenta20.sheet li.item-header .item-controls a.item-create {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Esconde texto do botão Criar, mantendo ícone */
+.tormenta20.sheet .item-header .item-create {
+    font-size: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    /* Largura fixa para o botão virar só um ícone */
+}
+
+.tormenta20.sheet .item-header .item-create i {
+    font-size: 0.95em !important;
+    /* Mesmo tamanho dos textos */
+    margin: 0 !important;
+}
+
+/* Garante visibilidade específica para o config de skills */
+.tormenta20.sheet li.item-header .item-name a#configure-skills {
+    color: var(--dnd5e-color-text-light) !important;
+    opacity: 1 !important;
+}
+
+/* Skills List Specifics - CORREÇÃO DE TEXTO CORTADO + COMPACTO */
+.tormenta20.sheet .skills-list .skill {
+    padding: 2px 4px;
+    /* Ultra compacto */
+    border-radius: 2px;
+    margin-bottom: 1px;
+    height: auto;
+    min-height: 22px;
+}
+
+/* Força o nome da perícia a NÃO quebrar se houver espaço, mas wrap se precisar */
+.tormenta20.sheet .skills-list .skill .item-name {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    line-height: 1.1;
+    /* Linhas mais apertadas */
+    align-items: center;
+    display: flex;
+    font-size: 0.9em;
+    /* Menor */
+}
+
+.tormenta20.sheet .skills-list .skill .item-name span {
+    display: inline-block;
+}
+
+
+/* --- Inputs Defaults --- */
+.tormenta20.sheet input[type="text"],
+.tormenta20.sheet input[type="number"],
+.tormenta20.sheet select {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #bbb;
+    border-radius: 0;
+    font-family: var(--dnd5e-font-body);
+    font-size: 0.85em;
+    /* Reduzido */
+    padding: 1px;
+    height: 20px;
+    /* Altura forçada menor */
+}
+
+.tormenta20.sheet input:focus,
+.tormenta20.sheet select:focus {
+    background: rgba(255, 255, 255, 0.5);
+    border-bottom: 2px solid var(--dnd5e-color-gold);
+    box-shadow: none;
+}
+
+/* --- Icons --- */
+.tormenta20.sheet i.fas,
+.tormenta20.sheet i.fa-solid {
+    color: var(--dnd5e-color-crimson);
+    font-size: 0.9em;
+    /* Icones menores */
+}
+
+.tormenta20.sheet li.item-header .item-controls a,
+.tormenta20.sheet li.item-header .item-controls i {
+    color: var(--dnd5e-color-text-light) !important;
+}
+
+/* --- Textareas e Editores --- */
+.tormenta20.sheet textarea,
+.tormenta20.sheet .editor-content {
+    background: rgba(255, 255, 255, 0.4) !important;
+    color: var(--dnd5e-color-text-dark);
+    border: 1px solid var(--dnd5e-color-faint);
+    padding: 4px;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'Signika', sans-serif;
+}
+
+/* Garante que títulos dentro da descrição usem Signika */
+.tormenta20.sheet.item .editor-content h1,
+.tormenta20.sheet.item .editor-content h2,
+.tormenta20.sheet.item .editor-content h3,
+.tormenta20.sheet.item .editor-content h4,
+.tormenta20.sheet.item .editor-content h5,
+.tormenta20.sheet.item .editor-content h6 {
+    font-family: 'Signika', sans-serif !important;
+    border-bottom: 1px solid var(--dnd5e-color-crimson) !important;
+}
+
+
+
+/* --- AJUSTE DE ITEM EXPANDIDO (SUMMARY) --- */
+.tormenta20.sheet .item-summary {
+    flex: 1 0 100%;
+    display: block !important;
+    padding: 8px;
+    /* Reduzido */
+    border-top: 1px dashed var(--dnd5e-color-gold);
+    background: rgba(255, 255, 255, 0.3);
+    margin-top: 2px;
+    border-radius: 0 0 4px 4px;
+}
+
+/* Separador APENAS para headers reais H4 */
+/* Separador APENAS para headers reais H4 */
+.tormenta20.sheet .item-summary h4 {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid var(--dnd5e-color-gold);
+    margin-bottom: 4px;
+    padding-bottom: 1px;
+    font-family: var(--dnd5e-font-header);
+    color: var(--dnd5e-color-crimson);
+    font-size: 1.1em;
+}
+
+.tormenta20.sheet .item-summary h1,
+.tormenta20.sheet .item-summary h2,
+.tormenta20.sheet .item-summary h3,
+.tormenta20.sheet .item-summary h4,
+.tormenta20.sheet .item-summary h5,
+.tormenta20.sheet .item-summary h6 {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid var(--dnd5e-color-crimson);
+    margin-bottom: 4px;
+    padding-bottom: 1px;
+    font-family: 'Signika', sans-serif !important;
+    color: var(--dnd5e-color-text-dark);
+    font-size: 1.1em;
+}
+
+/* Ajusta o texto da descrição */
+.tormenta20.sheet .item-summary p,
+.tormenta20.sheet .item-summary div {
+    display: block;
+    margin-top: 4px;
+    text-align: justify;
+    line-height: 1.4;
+    font-size: 0.9em;
+    font-family: 'Signika', sans-serif;
+}
+
+/* Garante que negrito não quebre linha (comportamento natural) */
+.tormenta20.sheet .item-summary strong,
+.tormenta20.sheet .item-summary b {
+    display: inline;
+    font-weight: bold;
+    color: inherit;
+}
+
+/* Ajusta a imagem se ela aparecer no sumário */
+.tormenta20.sheet .item-summary img {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 4px;
+    border: 1px solid var(--dnd5e-color-gold);
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* --- FIX DE LAYOUT PARA FAVORITOS (DETALHES) --- */
+/* Restaura fundo cinza para agrupar itens (Pedido do usuário) */
+.tormenta20.sheet .favorites,
+.tormenta20.sheet .attributes-right .inventory-list {
+    background: rgba(0, 0, 0, 0.08) !important;
+    /* Fundo cinza escuro */
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-radius: 4px;
+    padding: 2px !important;
+    margin: 0 0 5px 0 !important;
+}
+
+.tormenta20.sheet .favorites .item-list {
+    padding: 0;
+}
+
+/* Garante que o item de favoritos tenha wrap no nome se precisar */
+.tormenta20.sheet .favorites li.item {
+    flex-wrap: wrap !important;
+    margin-bottom: 2px !important;
+    /* Espaço entre itens */
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.1);
+    /* Separador sutil opcional */
+}
+
+.tormenta20.sheet .favorites .item-name {
+    flex: 1;
+    min-width: 180px;
+    white-space: normal;
+}
+
+/* --- INVENTÁRIO, PODERES, EFEITOS (Listas UL) --- */
+.tormenta20.sheet .tab.inventory .item-list,
+.tormenta20.sheet .tab.powers .item-list,
+.tormenta20.sheet .tab.effects .item-list,
+.tormenta20.sheet .tab.journal .item-list {
+    background: rgba(0, 0, 0, 0.08) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-radius: 4px;
+    padding: 2px !important;
+    margin: 0 0 5px 0 !important;
+}
+
+/* Reduz fonte da aba Efeitos */
+.tormenta20.sheet .tab.effects,
+.sheet.item .tab.effects,
+.item-sheet .tab.effects,
+.tormenta20.sheet .tab.effects .item-list .item,
+.tormenta20.sheet .tab.effects .item-name,
+.tormenta20.sheet .tab.effects .item-name h4,
+.tormenta20.sheet .tab.effects h4,
+.tormenta20.sheet .tab.effects .item label,
+.item-name.effect-name h4.item-name,
+.effect-name h4 {
+    font-size: 0.95em !important;
+}
+
+/* Selector baseado na estrutura exata fornecida pelo usuário (sem depender de .sheet) */
+ol.effects-list li.item .item-name h4.item-name,
+ol.effects-list .item-name h4,
+ol.effects-list h4 {
+    font-size: 0.95em !important;
+    line-height: normal !important;
+}
+
+/* --- MAGIAS (Lista Aninhada OL) --- */
+.tormenta20.sheet .tab.spells ol.item-list {
+    background: rgba(0, 0, 0, 0.08) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-radius: 4px;
+    padding: 2px !important;
+    margin: 0 0 5px 0 !important;
+}
+
+/* Remove borda do container raiz de magias */
+.tormenta20.sheet .tab.spells>ul.item-list {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+/* --- Cabeçalho da Cotação de Magias (Centralizado) --- */
+.tormenta20.sheet .tab.spells>.item-list>.item-header {
+    justify-content: center !important;
+    text-align: center;
+    background: var(--dnd5e-color-crimson) !important;
+    border: 1px solid var(--dnd5e-color-crimson) !important;
+    gap: 5px;
+}
+
+/* Ajusta o select de atributo para ficar bonito no header */
+.tormenta20.sheet .tab.spells>.item-list>.item-header select {
+    background: transparent;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-family: var(--dnd5e-font-header);
+    height: auto;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.tormenta20.sheet .tab.spells>.item-list>.item-header select option {
+    color: black;
+}
+
+/* --- MOEDAS E BOTÃO CRIAR (Visual Refinado) --- */
+.tormenta20.sheet .inventory-currency {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4px 5px 10px;
+    padding: 2px;
+    gap: 8px;
+}
+
+/* ï¾ƒçš‡one de moedas global */
+.tormenta20.sheet .inventory-currency>i {
+    color: var(--dnd5e-color-crimson);
+    font-size: 1.2em;
+    margin-right: 2px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Container da Lista de Moedas */
+.tormenta20.sheet .inventory-currency .currency {
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: flex-start;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Item Individual de Moeda (Label + Input) */
+.tormenta20.sheet .inventory-currency .currency li {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.4);
+    /* Fundo sutil */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
+.tormenta20.sheet .inventory-currency .currency label {
+    font-weight: bold;
+    color: var(--dnd5e-color-crimson);
+    margin-right: 4px;
+    font-size: 0.85em;
+    text-transform: uppercase;
+}
+
+.tormenta20.sheet .inventory-currency .currency input {
+    background: transparent !important;
+    border: none !important;
+    text-align: right;
+    width: 60px;
+    font-family: inherit;
+    /* Fonte padrï¾ƒï½£o do sistema (mais legï¾ƒï½­vel) */
+    font-weight: bold;
+    color: var(--dnd5e-color-text-dark);
+    height: 22px;
+    font-size: 1.1em;
+    /* Levemente maior */
+}
+
+/* Botão de Criar Item (+) */
+.tormenta20.sheet .inventory-currency .item-create {
+    margin: 0;
+    align-self: center;
+    background: var(--dnd5e-color-crimson);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 26px;
+    height: 26px;
+    /* Quadrado */
+    display: flex;
+    /* Flex para centralizar ï¾ƒï½­cone */
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9em;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: background 0.2s, transform 0.1s;
+}
+
+.tormenta20.sheet .inventory-currency .item-create:hover {
+    background: #a00000;
+    transform: scale(1.05);
+    color: white !important;
+    text-shadow: none;
+}
+
+/* --- Barra de Carga (Encumbrance) --- */
+.tormenta20.sheet .encumbrance {
+    margin: 10px 2px 10px !important;
+    /* Espaço para nï¾ƒï½£o cortar em baixo */
+    border-radius: 5px;
+    height: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+/* Garante que o texto da carga fique sempre visï¾ƒï½­vel e centralizado */
+.tormenta20.sheet .encumbrance .encumbrance-label {
+    top: -1px;
+    /* Ajuste fino */
+    font-size: 0.85em;
+    color: white;
+    text-shadow: 0 0 2px black;
+    z-index: 2;
+}
+
+/* --- ABA DIï¾ƒãƒ½IO (Visual Moderno) --- */
+.tormenta20.sheet .tab.journal .note-entries {
+    border: none !important;
+    gap: 10px;
+}
+
+.tormenta20.sheet .tab.journal article {
+    border: none !important;
+    background: transparent !important;
+    margin-bottom: 10px;
+    position: relative;
+    /* Anchor para botï¾ƒï½£o editar */
+}
+
+/* Títulos das Seï¾ƒï½§ï¾ƒï½µes (Estilo Header) */
+.tormenta20.sheet .tab.journal .section-titles {
+    border: none !important;
+    border-bottom: 2px solid var(--dnd5e-color-crimson) !important;
+    margin-bottom: 5px;
+    padding-bottom: 2px;
+    font-family: var(--dnd5e-font-header);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--dnd5e-color-crimson) !important;
+    font-size: 0.9em;
+}
+
+.tormenta20.sheet .tab.journal .section-titles input {
+    border: none !important;
+    background: transparent !important;
+    color: var(--dnd5e-color-crimson) !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0 25px 0 0;
+    /* Espaço para botï¾ƒï½£o */
+    height: auto;
+    width: 100%;
+}
+
+/* Caixa de Texto (Editor) */
+.tormenta20.sheet .tab.journal .editor {
+    background: rgba(0, 0, 0, 0.05) !important;
+    /* Fundo leve */
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    /* Borda suave */
+    border-radius: 4px;
+    padding: 8px;
+    min-height: 60px;
+}
+
+/* Botão de Editar (Reposicionado no Tï¾ƒï½­tulo) */
+.tormenta20.sheet .tab.journal .editor .editor-edit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: transparent;
+    border: none;
+    color: var(--dnd5e-color-crimson);
+    font-size: 0.9em;
+    z-index: 10;
+}
+
+.tormenta20.sheet .tab.journal .editor .editor-content {
+    min-height: 60px;
+    font-size: 0.9em;
+    /* Texto legï¾ƒï½­vel */
+}
+
+/* --- Nï¾ƒæ˜‚EL E ï¾ƒåž¢ONES (Visual Clean sem Borda) --- */
+.tormenta20.sheet .header-exp .charlevel {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: 5px 0;
+    width: auto;
+}
+
+/* ï¾ƒçš‡ones (Coraï¾ƒï½§ï¾ƒï½£o/Cama) */
+.tormenta20.sheet .header-exp .charlevel a {
+    color: var(--dnd5e-color-crimson) !important;
+    font-size: 1.1em;
+    opacity: 0.8;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+.tormenta20.sheet .header-exp .charlevel a:hover {
+    color: var(--dnd5e-color-gold) !important;
+    transform: scale(1.1);
+    opacity: 1;
+    text-shadow: none;
+}
+
+/* Texto do Nï¾ƒï½­vel */
+.tormenta20.sheet .header-exp .charlevel .level {
+    font-weight: bold;
+    font-family: var(--dnd5e-font-header);
+    text-transform: uppercase;
+    font-size: 1.2em;
+    /* Tamanho bom */
+    color: var(--dnd5e-color-crimson) !important;
+    border: none;
+    padding: 0;
+    margin-left: 5px;
+    line-height: 1;
+}
+
+/* --- FIXES FINAIS --- */
+/* Remove linha tracejada da descriï¾ƒï½§ï¾ƒï½£o do item */
+.tormenta20.sheet .item-summary,
+.tormenta20.sheet .item-description {
+    border: none !important;
+    border-top: none !important;
+    box-shadow: none !important;
+}
+
+.tormenta20.sheet .item.expanded {
+    border-bottom: 1px solid #ccc !important;
+    /* Mantï¾ƒï½©m apenas a borda de baixo do item */
+}
+
+/* --- RESTAURAÇÃO DE FONTE PARA EFEITOS DE USO (Item Sheet) --- */
+.tormenta20.sheet.item .effects-list .item-name h4,
+.tormenta20.sheet.item .effects-list .item-name {
+    font-family: 'Signika', sans-serif !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    font-size: 0.95em !important;
+    /* Tamanho legível original */
+    border: none !important;
+}
+
+
+
+
+/* --- FIX: INVERSO (Container Transparente, Card Branco) --- */
+#chat-log .message,
+#chat-log .chat-message {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 5px 10px 5px 5px !important;
+}
+
+/* Aplica o estilo visual APENAS no conteúdo interno (Card) */
+.tormenta20.chat-card,
+#chat-log .message .message-content {
+    background: #fdfdfd !important;
+    border: 1px solid #ccc !important;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    display: block !important;
+}
+
+
+/* O header padrão do Foundry (nome do jogador) deve ficar invisível ou integrado? */
+/* Geralmente transparente fica melhor se o card tem header próprio */
+#chat-log .message .message-header {
+    background: transparent !important;
+    border: none !important;
+    margin-bottom: 2px;
+    padding: 2px 5px !important;
+}
+
+/* Restaura o visual do cabeçalho do card no chat */
+.tormenta20.chat-card .card-header,
+.chat-card .card-header {
+    background: var(--dnd5e-color-crimson) !important;
+    color: var(--dnd5e-color-text-light) !important;
+    padding: 3px 8px;
+    border-top: none;
+    border-bottom: 2px solid var(--dnd5e-color-gold);
+    margin: 0;
+}
+
+.tormenta20.chat-card .card-header h3,
+.tormenta20.chat-card .card-header h4,
+.chat-card .card-header h3,
+.chat-card .card-header h4 {
+    color: var(--dnd5e-color-text-light) !important;
+    border: none !important;
+    margin: 2px;
+}
+
+/* Garante que qualquer texto dentro do header (como custo de PM) seja branco/claro */
+.tormenta20.chat-card .card-header *,
+.chat-card .card-header * {
+    color: var(--dnd5e-color-text-light) !important;
+    border-color: var(--dnd5e-color-text-light) !important;
+    font-family: var(--dnd5e-font-header) !important;
+}
