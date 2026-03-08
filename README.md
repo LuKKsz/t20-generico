@@ -1,0 +1,3 @@
+Para compartilhamento do modulo entre amigos...
+
+manifest: 
