@@ -1,4 +1,4 @@
-﻿/* Estilo Estilo D&D 5e Moderno para Tormenta20 (v3.2 - Títulos Equilibrados) */
+/* Estilo Estilo D&D 5e Moderno para Tormenta20 (v3.2 - Títulos Equilibrados) */
 @import url('https://fonts.googleapis.com/css2?family=Signika:wght@300;400;600;700&display=swap');
 
 :root {
@@ -630,6 +630,55 @@
 .tormenta20.sheet.item .editor-content h6 {
     font-family: 'Signika', sans-serif !important;
     border-bottom: 1px solid var(--dnd5e-color-crimson) !important;
+}
+
+/* --- ProseMirror Editor Toolbar (Aggressive Lock to 1 line) --- */
+.tormenta20.sheet .editor-menu,
+.tormenta20.sheet .prosemirror-menu,
+.tormenta20.sheet [id*="prosemirror-menu"] {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    height: 32px !important; /* Fixed height to prevent 2 lines */
+    max-height: 32px !important;
+    scrollbar-width: none !important;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px 4px 0 0;
+    padding: 0 4px !important;
+    gap: 2px !important;
+}
+
+.tormenta20.sheet .editor-menu::-webkit-scrollbar,
+.tormenta20.sheet .prosemirror-menu::-webkit-scrollbar {
+    display: none;
+}
+
+.tormenta20.sheet .editor-menu-group,
+.tormenta20.sheet .prosemirror-menu-group,
+.tormenta20.sheet .editor-menu > * {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    align-items: center !important;
+}
+
+.tormenta20.sheet .editor-menu .menu-dropdown,
+.tormenta20.sheet .prosemirror-menu-dropdown,
+.tormenta20.sheet .prosemirror-menu-button,
+.tormenta20.sheet .editor-menu button {
+    padding: 0 4px !important; /* Even more compact */
+    font-size: 0.8em !important;
+    height: 26px !important;
+    white-space: nowrap !important;
+    display: flex !important;
+    align-items: center !important;
+    min-width: unset !important;
 }
 
 
