@@ -1,8 +1,8 @@
-2026/03/10-18:28:55.011 2a34 Recovering log #2085
-2026/03/10-18:28:55.014 2a34 Delete type=0 #2085
-2026/03/10-18:28:55.014 2a34 Delete type=3 #2083
-2026/03/10-18:29:02.915 48cc Level-0 table #2090: started
-2026/03/10-18:29:02.916 48cc Level-0 table #2090: 0 bytes OK
-2026/03/10-18:29:02.917 48cc Delete type=0 #2088
-2026/03/10-18:29:02.920 48cc Manual compaction at level-0 from '!actors!2T6cLfkaCpzVTZZ9' @ 72057594037927935 : 1 .. '!folders!ysm0MrBiJktsrMIN' @ 0 : 0; will stop at (end)
-2026/03/10-18:29:02.920 48cc Manual compaction at level-1 from '!actors!2T6cLfkaCpzVTZZ9' @ 72057594037927935 : 1 .. '!folders!ysm0MrBiJktsrMIN' @ 0 : 0; will stop at (end)
+2026/03/11-09:59:48.441 4c30 Recovering log #2092
+2026/03/11-09:59:48.444 4c30 Delete type=0 #2092
+2026/03/11-09:59:48.444 4c30 Delete type=3 #2091
+2026/03/11-11:42:44.383 c5c Level-0 table #2096: started
+2026/03/11-11:42:44.384 c5c Level-0 table #2096: 0 bytes OK
+2026/03/11-11:42:44.384 c5c Delete type=0 #2094
+2026/03/11-11:42:44.384 c5c Manual compaction at level-0 from '!actors!2T6cLfkaCpzVTZZ9' @ 72057594037927935 : 1 .. '!folders!ysm0MrBiJktsrMIN' @ 0 : 0; will stop at (end)
+2026/03/11-11:42:44.384 c5c Manual compaction at level-1 from '!actors!2T6cLfkaCpzVTZZ9' @ 72057594037927935 : 1 .. '!folders!ysm0MrBiJktsrMIN' @ 0 : 0; will stop at (end)
