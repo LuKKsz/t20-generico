@@ -1,14 +1,14 @@
-2026/03/11-11:44:41.990 35ec Recovering log #2204
-2026/03/11-11:44:41.993 35ec Delete type=0 #2204
-2026/03/11-11:44:41.993 35ec Delete type=3 #2201
-2026/03/11-14:21:19.499 c5c Level-0 table #2210: started
-2026/03/11-14:21:19.501 c5c Level-0 table #2210: 127678 bytes OK
-2026/03/11-14:21:19.502 c5c Delete type=0 #2208
-2026/03/11-14:21:19.503 c5c Manual compaction at level-0 from '!folders!1K5rHTnG28wVMuMw' @ 72057594037927935 : 1 .. '!items.effects!zypfYb4xgmaEh5nO.txwccVMjjvAcVEyt' @ 0 : 0; will stop at '!items.effects!r36dswEyKs5hsTOe.jtRzIIPWmVQxgQtV' @ 12745 : 1
-2026/03/11-14:21:19.503 c5c Compacting 1@0 + 1@1 files
-2026/03/11-14:21:19.512 c5c Generated table #2211@0: 1390 keys, 878376 bytes
-2026/03/11-14:21:19.512 c5c Compacted 1@0 + 1@1 files => 878376 bytes
-2026/03/11-14:21:19.513 c5c compacted to: files[ 0 1 0 0 0 0 0 ]
-2026/03/11-14:21:19.513 c5c Delete type=2 #2206
-2026/03/11-14:21:19.513 c5c Delete type=2 #2210
-2026/03/11-14:21:19.516 c5c Manual compaction at level-0 from '!items.effects!r36dswEyKs5hsTOe.jtRzIIPWmVQxgQtV' @ 12745 : 1 .. '!items.effects!zypfYb4xgmaEh5nO.txwccVMjjvAcVEyt' @ 0 : 0; will stop at (end)
+2026/03/11-15:40:17.310 93a8 Recovering log #2209
+2026/03/11-15:40:17.313 93a8 Delete type=0 #2209
+2026/03/11-15:40:17.313 93a8 Delete type=3 #2207
+2026/03/11-17:28:28.741 20e8 Level-0 table #2215: started
+2026/03/11-17:28:28.747 20e8 Level-0 table #2215: 1854 bytes OK
+2026/03/11-17:28:28.748 20e8 Delete type=0 #2213
+2026/03/11-17:28:28.753 20e8 Manual compaction at level-0 from '!folders!1K5rHTnG28wVMuMw' @ 72057594037927935 : 1 .. '!items.effects!zypfYb4xgmaEh5nO.txwccVMjjvAcVEyt' @ 0 : 0; will stop at '!items!smJXhmvSmKCIZlfs' @ 12845 : 1
+2026/03/11-17:28:28.753 20e8 Compacting 1@0 + 1@1 files
+2026/03/11-17:28:28.762 20e8 Generated table #2216@0: 1390 keys, 878286 bytes
+2026/03/11-17:28:28.762 20e8 Compacted 1@0 + 1@1 files => 878286 bytes
+2026/03/11-17:28:28.762 20e8 compacted to: files[ 0 1 0 0 0 0 0 ]
+2026/03/11-17:28:28.763 20e8 Delete type=2 #2211
+2026/03/11-17:28:28.763 20e8 Delete type=2 #2215
+2026/03/11-17:28:28.768 20e8 Manual compaction at level-0 from '!items!smJXhmvSmKCIZlfs' @ 12845 : 1 .. '!items.effects!zypfYb4xgmaEh5nO.txwccVMjjvAcVEyt' @ 0 : 0; will stop at (end)
